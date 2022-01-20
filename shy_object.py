@@ -44,9 +44,3 @@ class ShyObject(AbstractShyObject):
     def veil(self) -> dict:
         self._private = True
         return self._get_items()
-
-
-a = ShyObject(a=1, b=2)
-a['c'] = 3
-print(a.unveil())
-print(a.veil())
