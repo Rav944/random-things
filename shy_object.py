@@ -16,10 +16,9 @@ class AbstractShyObject(ABC):
 
 
 class ShyObject(AbstractShyObject):
-    _private = False
-    _keys = []
-
     def __init__(self, **kwargs) -> None:
+        self._private = False
+        self._keys = []
         [self.__setattr__(key, value) for key, value in kwargs.items()]
 
     def __getitem__(self, item) -> str:
@@ -46,3 +45,8 @@ class ShyObject(AbstractShyObject):
         self._private = True
         return self._get_items()
 
+
+a = ShyObject(a=1, b=2)
+a['c'] = 3
+print(a.unveil())
+print(a.veil())
